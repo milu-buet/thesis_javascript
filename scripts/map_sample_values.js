@@ -25,3 +25,13 @@ Map.prototype.getSampleStyle = function() {
 
 	return style
 };
+
+Map.prototype.getRedStyle = function() {
+	var style = {
+		strokeColor: '#ff0000',
+		strokeOpacity: 0.8,
+		strokeWidth: 4
+	};
+
+	return style
+};

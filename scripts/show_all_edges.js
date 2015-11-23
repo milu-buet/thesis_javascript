@@ -36,7 +36,6 @@ function all_path_shower(graph,map){
 	for (var k in graph.nodes_point){
 		if (typeof graph.nodes_point[k] !== 'function' && typeof graph.nodes[k] != 'undefined') {
 			 //alert("Key is " + k + ", value is" + target[k]);
-			 map.addMarker(graph.nodes_point[k].lon,graph.nodes_point[k].lat);
 			 path_shower(graph,map,[k]);
 			 
 		}
@@ -58,13 +57,14 @@ function path_shower(graph,map,paths){
 		}
 	}
 	
-	if(cc == 0 && paths.length > 20){
+	if(cc == 0 && paths.length > 10){
 		con++;
 		//console.log(con);
 		//console.log(paths);
 		dp = graph.getDataPath(paths);
 		map.plotResult(dp,map.getSampleStyle());
 		map.addMarker(graph.nodes_point[new_node].lon,graph.nodes_point[new_node].lat);
+		map.addMarker(graph.nodes_point[paths[0]].lon,graph.nodes_point[paths[0]].lat);
 	}
 	
 	return;

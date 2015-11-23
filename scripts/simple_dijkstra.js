@@ -37,7 +37,7 @@ function simple_dijkstra_end(graph,map){
 		//console.log(result_path);
 	}
 	
-	map.plotResult(result_path,map.getSampleStyle());
+	map.plotResult(result_path,map.getRedStyle());
 	console.log("Simple dijkstra end ....");
 	
 	ended_time = new Date().getTime();
