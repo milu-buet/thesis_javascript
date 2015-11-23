@@ -176,6 +176,26 @@ Graph.prototype.getResultDataPath = function(from,to){
     return rdata;
 };
 
+Graph.prototype.getDataPath = function(path){
+
+    rpath = path;
+
+    var k;
+    rdata = [];
+    rdata[0] = [];
+    rdata[1] = [];
+    rdata[2] = [];
+    for(k=0;k<rpath.length;k++){
+
+        rdata[0][k] = rpath[k];
+        rdata[1][rdata[0][k]] = this.nodes_point[rdata[0][k]].lon;
+        rdata[2][rdata[0][k]] = this.nodes_point[rdata[0][k]].lat;
+
+    }
+
+    return rdata;
+};
+
 
 
 function compareWeights(a, b) {

@@ -54,7 +54,11 @@ function runAlgorithm(map,algorithm){
 				map.plotResult(sdata,style);
 
         }
-        else if(algorithm == "2"){
+		else if(algorithm  == "2"){
+
+                show_all_edges(map);
+        }
+        else if(algorithm == "3"){
 				
 				if(map.s_lon == -1 || map.s_lat == -1 || map.d_lon == -1 || map.d_lat == -1){
 					

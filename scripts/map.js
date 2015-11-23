@@ -67,13 +67,19 @@ Map.prototype.plotResult = function(data,style) {
 
 };
 
+Map.prototype.addMarker = function(lon,lat) {
+	var ourpoint1 = new OpenLayers.LonLat(lon,lat);
+	ourpoint1.transform(new OpenLayers.Projection("EPSG:4326" ),this.osm_map.getProjectionObject());		 
+	this.markers.addMarker(new OpenLayers.Marker(ourpoint1));
+};
+
 Map.prototype.runSample = function(){
         sampledata = this.getSampleDataforLineString();
         samplestyle = this.getSampleStyle();
         this.plotResult(sampledata,samplestyle);
 };
 
-Map.prototype.clearMap= function() {
+Map.prototype.clearMap = function() {
 
     this.markers.clearMarkers();
     this.select_source=1;
